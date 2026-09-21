@@ -1,0 +1,4 @@
+(test
+ (name test_blackjack)
+ (libraries ounit2 blackjack)
+ (deps (glob_files_rec ../data/*)))

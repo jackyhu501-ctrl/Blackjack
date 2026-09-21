@@ -1,0 +1,6 @@
+(library
+ (name blackjack)
+ (modules analysis card deck hand game render)
+ (libraries ANSITerminal)
+ (instrumentation
+  (backend bisect_ppx)))
