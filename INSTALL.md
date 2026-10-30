@@ -1,50 +1,14 @@
-# Install & Build Instructions
+# Install and build
 
-## Packages Used
+See the [README setup instructions](README.md#first-time-setup) for first-time installation on Windows (WSL), macOS, and Linux, including opam initialization and package installation.
 
-The game itself (library + executable) depends on **`ANSITerminal`** for
-colored output (chip counts and round outcomes). Install it with:
+With the project dependencies installed and the correct opam switch active:
 
-```bash
-opam install ANSITerminal
-```
-
-The test suite additionally depends on **`ounit2`** (test-only). Install it
-with:
-
-```bash
-opam install ounit2
-```
-
-
-## Build
-
-```bash
+```sh
+eval $(opam env)
 dune build
-```
-
-## Run the Game
-
-```bash
 dune exec bin/main.exe
-```
-
-## Run the Tests
-
-```bash
 dune test
 ```
 
-## Clean Build Artifacts
-
-```bash
-dune clean
-```
-
-## Troubleshooting
-
-- If `dune build` fails with a missing-package error, re-run
-  `opam install . --deps-only --with-test` and make sure your current OPAM
-  switch is active (`eval $(opam env)`).
-- If a different OS causes issues, both author and grader can use the CS 3110
-  virtual machine described in the OCaml Programming textbook appendix.
+Use `dune clean` to remove generated build files. Dune 3.22 or newer is required.
